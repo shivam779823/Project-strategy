@@ -1,5 +1,4 @@
 
-
 /******************************************
 	VPC 
  *****************************************/
@@ -7,7 +6,7 @@
 module "usc1-trust-vpc-001" {
   source                  = "../../modules/vpc"
   project_id              = var.project_id
-  network_name            = "usc1-trust-vpc-0001"
+  network_name            =  var.network_name
   auto_create_subnetworks = false
 }
 
@@ -21,11 +20,14 @@ module "usc1-trustsubnet-001" {
   network_name = module.usc1-trust-vpc-001.vpc.self_link
 
   subnets = [{
-    subnet_name           = "usc1-trustsubnet-001"
-    subnet_region         = "us-central1"
-    subnet_ip             = "10.10.0.0/24"
-    subnet_flow_logs      = "false"
-    subnet_private_access = "true"
+
+    subnet_name           = "${var.subnet_name1}"
+    subnet_region         = "${var.region}"
+    subnet_ip             = "${var.subnet_ip}"
+    subnet_flow_logs      = "${var.subnet_flow_logs}"
+    subnet_private_access = "${var.subnet_private_access}"
+    
+    
     }
   ]
   depends_on = [
