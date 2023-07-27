@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform1:
-    if: ${{ github.ref == 'ref/heads/dev' }}
+    if: github.ref == 'ref/heads/dev' 
     name: 'Terraform Bootstrap'
     runs-on: ubuntu-latest
 
