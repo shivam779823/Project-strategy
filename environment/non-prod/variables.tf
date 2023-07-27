@@ -5,8 +5,6 @@ variable "region" {
 variable "project_id" {
 }
 
-variable "service_account" {  
-}
 
 variable "network_name" {
   default = "usc1-trust-vpc-001"
