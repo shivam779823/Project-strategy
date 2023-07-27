@@ -1,5 +1,5 @@
 
-project_id = "qwiklabs-gcp-00-54d3d099f9e2"
+project_id = "qwiklabs-gcp-02-00204af3f237"
 
 state_bucket_name = "statefile-001-prod"
 
