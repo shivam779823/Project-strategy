@@ -5,12 +5,13 @@ on:
     branches:       
       - dev
       - main 
-
+env:
+  branch : dev
 jobs:
   terraform1:
     name: 'Terraform Bootstrap'
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'ref/heads/main' }}
+    if: ${{ env.branch == 'main' }}
     defaults:
       run:
         shell: bash
