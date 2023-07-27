@@ -8,16 +8,15 @@ on:
 
 jobs:
   terraform1:
-    if: ${{ github.ref == 'ref/heads/dev' }}
     name: 'Terraform Bootstrap'
     runs-on: ubuntu-latest
-
+    if: ${{ github.ref == 'ref/heads/main' }}
     defaults:
       run:
         shell: bash
         working-directory: /home/runner/work/Project-strategy/Project-strategy/Bootstrap/non-prod
-
     steps:
+     
     - name: Checkout
       uses: actions/checkout@v2
       
