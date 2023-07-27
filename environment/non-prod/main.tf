@@ -4,7 +4,7 @@
  *****************************************/
 
 module "usc1-trust-vpc-001" {
-  source                  = "./modules/vpc"
+  source                  = "../../modules/vpc"
   project_id              = var.project_id
   network_name            =  var.network_name
   auto_create_subnetworks = false
@@ -15,7 +15,7 @@ module "usc1-trust-vpc-001" {
  *****************************************/
 
 module "usc1-trustsubnet-001" {
-  source       = "./modules/subnet"
+  source       = "../../modules/subnet"
   project_id   = var.project_id
   network_name = module.usc1-trust-vpc-001.vpc.self_link
 
