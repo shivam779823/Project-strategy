@@ -1,6 +1,6 @@
 region = "us-central1"
 
-project_id = "qwiklabs-gcp-03-3852fca695cds"
+project_id = "qwiklabs-gcp-02-00204af3f237"
 
 network_name = "usc1-trust-vpc-001"
 
