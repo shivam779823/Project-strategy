@@ -27,9 +27,9 @@ jobs:
           path: test
           tlsSkipVerify: true
           secrets: |
-            test/sa_key HELLO
+            test/sa_key GOOGLE
             
       - name: echo
         run: |
-          echo "${{ env.HELLO }}"
+          echo "${{ env.GOOGLE }}"
         
