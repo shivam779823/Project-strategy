@@ -27,4 +27,4 @@ jobs:
           path: test
           tlsSkipVerify: true
           secrets: |
-            test/access_key ACCESS_CREDENTIALS
+            test/sa_key GOOGLE
