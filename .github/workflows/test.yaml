@@ -1,21 +1,30 @@
-name: GH Demo
+name: 'test'
 
 on:
-  workflow_dispatch: 
-jobs:
-  demo:
-    permissions:
-      id-token: write
-      contents: read
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+
+jobs:        
+  terraform1:
+    name: 'test'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+      
       - name: Get Secrets
-        id: secrets
-        uses: hashicorp/vault-action@v2.4.0
+        id: secretdata1
+        uses: hashicorp/vault-action@v2.5.0
         with:
           url: ${{ secrets.VAULT_ADDR }}
-          role: gh-demo
+          role: test-role
           method: jwt
-          path: gh-actions
+          path: test
+          tlsSkipVerify: true
           secrets: |
-            secret/data/gh-demo demo_secret
+            test/access_key ACCESS_CREDENTIALS
